@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ManageReportController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/ManageReport/Admin', [ManageReportController::class, 'AdminHomepage']);
+
+
