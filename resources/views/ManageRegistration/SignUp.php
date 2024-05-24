@@ -27,7 +27,7 @@
 <body>
     <div class="container mt-5 form-container">
         <img src="..\..\assets\logo2.png" alt="Header Image" class="header-image" width="600" height="100" >
-        <h2 class="text-center">Sign Up</h2>
+        <h2 class="text-left">New Registration</h2>
         <form>
             <div class="form-group">
                 <label for="name">Name:</label>
