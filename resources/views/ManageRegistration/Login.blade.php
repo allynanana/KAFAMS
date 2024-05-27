@@ -27,22 +27,24 @@
 <body>
     <div class="container mt-5 form-container">
         <img src="..\..\assets\logo2.png" alt="Header Image" class="header-image" width="600" height="100" >
-        <p>Enter the email address associated with your account and we'll send you a link to reset your password.</p>
+        <h2 class="text-left">Login</h2>
         <form>
             
             <div class="form-group">
-            
-                <label for="Email">Email:</label>
-                <input type="text" class="form-control" id="Email" name="Email">
+                <label for="ICNumber">IC Number:</label>
+                <input type="text" class="form-control" id="ICNumber" name="ICNumber">
             </div>
-           
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
           
       
             <div class="form-row">
                 
-                    <button type="submit" class="btn btn-primary btn-block">Continue</button>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
                
-                    
+                    <a href="ForgotPassword.php" class="btn btn-link btn-block">Forgot Password?</a>
 
                     <hr style="width: 100%; height: 2px; background-color: #808080; border: none;">
 
