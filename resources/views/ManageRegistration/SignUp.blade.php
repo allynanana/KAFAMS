@@ -26,7 +26,7 @@
 </head>
 <body>
     <div class="container mt-5 form-container">
-        <img src="..\..\assets\logo2.png" alt="Header Image" class="header-image" width="600" height="100" >
+        <img src="{{ asset('assets/logo2.png') }}" alt="Header Image" class="header-image" width="600" height="100" >
         <h2 class="text-left">New Registration</h2>
         <form>
             <div class="form-group">
