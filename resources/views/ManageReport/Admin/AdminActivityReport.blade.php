@@ -47,7 +47,7 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Registration</a>
+                            <a class="nav-link" href="#">Registradddtion</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">KAFA Activities</a>
