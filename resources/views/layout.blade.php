@@ -105,7 +105,7 @@
                 height: auto;
                 position: relative;
             }
-
+ /* Test */
             .sidebar a, .dropdown-btn {
                 text-align: center;
                 float: none;
@@ -123,7 +123,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
         <a class="navbar-brand" href="#">
             <img src="path/to/your/logo.png" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px;">
             <h2 style="display: inline; vertical-align: middle;">KAFA MANAGEMENT SYSTEM</h2>
@@ -149,6 +149,7 @@
         @yield('content')
     </div>
 
+    
     <script>
         var dropdown = document.getElementsByClassName("dropdown-btn");
         var i;
