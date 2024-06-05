@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akuan Akad Nikah/Within Country</title>
+    <title>Admin Homepage</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" type="text/css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -277,13 +277,13 @@
             background-color: #D9D9D9;
             border: none;
             color: black;
-            padding: 10px 20px;
+            height: 60%;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            margin-bottom: 10%;
+            margin-bottom: 4%;
             cursor: pointer;
-            border-radius: 16px;
+            
         }
 
         .button1 {
@@ -309,24 +309,21 @@
 
 <body>
     <div class="header">
-        <img src="\public\Images\KAFAmsheader.png" width="100%" height="155px">
+        
+        <img src="{{ asset('images/KAFAmsheader.png') }}" alt="Logo" width="100%" height="155px">
     </div>
 
     <div class="row">
         <div class="leftcolumn">
             <div class="card">
-                <div class="container5">
-                    <h4><b>Marriage Within Country </b></h4>
-                </div>
+                
 
                 <div class="sidenav">
-                    <a href="#about" class="button"><b>MARRIAGE REQUEST FORM</b></a>
-                    <a href="#services" class="button"><b>WALI AGREEMENT/WAKALAHWALI</b></a>
+                    <a href="#about" class="button"><b>Registration</b></a>
+                    <a href="#services" class="button"><b>KAFA Activity</b></a>
                     <a href="#clients" class="button active" style="background-color: #4A6BB3;"><b>AKUAN
                             AKAD NIKAH</b></a>
-                    <a href="#contact" class="button"><b>MARRIAGE CERTIFICATE
-                            /MARRIAGE CARD</b></a>
-                    <a href="#about" class="button"><b>PROOF OF PAYMENT</b></a>
+                    <a href="#contact" class="button"><b>Report</b></a>
                 </div>
             </div>
 
