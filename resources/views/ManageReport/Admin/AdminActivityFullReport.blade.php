@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Homepage</title>
+    <title>Activity Report</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" type="text/css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -47,11 +47,7 @@
         }
 
         /* Fake image */
-        .fakeimg {
-            background-color: #aaa;
-            width: 100%;
-            padding: 20px;
-        }
+
 
         /* Add a card effect for articles */
         .card {
@@ -241,20 +237,21 @@
             
         }
 
-        .button1 {
-            margin-left: 80%;
-            background-color: #9BBDFF;
-            border: none;
-            color: black;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            border-radius: 16px;
-
+        .btn-primary{
 
         }
+        
+        .container {
+        position: relative;
+        
+        }
+
+        .btn-primary {
+        position: absolute;
+        bottom: 10px; 
+        right: 10px; 
+        
+         }
 
         .button:hover {
             background-color: #3e8e41;
@@ -287,12 +284,19 @@
             <div class="card">
                 <div class="tabs">
                     <div class="tab">
+                        
                         <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
                         <label for="tab-1" class="tab-label">YEAR 1</label>
                         <div class="tab-content">
                             <div class="row">
                                 <div class="column">
                                     <!-- Year 1 graph chart -->
+                                    j/njkkk
+                                    <div class="container">
+                                        <!-- Your content goes here -->
+                                        <button class="btn btn-primary" type="submit">View Full Report</button>
+                                    </div>
+                                    
                                 </div>
                             </div>
         
