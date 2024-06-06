@@ -8,7 +8,11 @@ class  ManageReportController extends Controller
         return view('ManageReport.AdminHomepage');
     }
 
-    public function adminActivityReport (){
+    public function AdminActivityReport (){
+        return view('ManageReport.Admin.AdminActivityReportFull');
+    }
+
+    public function adminActivityReportFull (){
         return view('ManageReport.Admin.AdminActivityReport');
     }
 }
