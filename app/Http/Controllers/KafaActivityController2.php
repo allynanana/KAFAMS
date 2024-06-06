@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use App\Models\KafaActivityRecord;
+use App\Models\Booking;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Log;
+
 
 class KafaActivityController2 extends Controller
 {
@@ -16,10 +19,10 @@ class KafaActivityController2 extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $_kafaactivities = KafaActivityRecord::all();
-        return view('ManageKafaActivity.parents.index')->with('parents', $_kafaactivities);
-    }
+{
+    $kafaactivities = KafaActivityRecord::all();
+    return view('ManageKafaActivity.parents.index', compact('kafaactivities'));
+}
 
     /**
      * Show the form for creating a new resource.
@@ -48,35 +51,37 @@ class KafaActivityController2 extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(string $id): View
     {
-        //
-    }
+        $bookings = Booking::with('activity')->get();
 
-    public function viewBooking()
-    {
-        // Retrieve the authenticated user (parent)
-        $parent = Auth::user();
-
-        // Retrieve the bookings for the current parent
-        $bookings = $parent->bookings;
+        // Log the bookings for debugging
+        Log::info('Bookings retrieved:', $bookings->toArray());
 
         return view('ManageKafaActivity.parents.viewbooking', compact('bookings'));
     }
 
+
     public function book($id)
     {
-        // Retrieve the authenticated user (parent)
-        $parent = Auth::user();
-
-        // Retrieve the activity based on $id
         $activity = KafaActivityRecord::findOrFail($id);
 
-        // Attach the activity to the parent's bookings
-        $parent->bookings()->attach($activity);
+        $booking = new Booking();
+        $booking->activity_id = $activity->id;
+        $booking->save();
 
-        return redirect()->back()->with('success', 'Activity booked successfully!');
+        return redirect()->route('parents.viewBooking')->with('success', 'Activity booked successfully!');
     }
+
+    public function cancel($id)
+    {
+        $booking = Booking::findOrFail($id);
+        $booking->delete();
+
+        return redirect()->route('parents.viewBooking')->with('success', 'Booking cancelled successfully!');
+    }
+
+
     
 
 

@@ -14,12 +14,9 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('activity_id');
-            $table->unsignedBigInteger('booked_activity_id');
             $table->timestamps();
 
-             // Define foreign keys
-             $table->foreign('activity_id')->references('id')->on('_kafaactivities');
-             $table->foreign('booked_activity_id')->references('id')->on('_kafaactivities');
+            $table->foreign('activity_id')->references('id')->on('_kafaactivities');
         });
     }
 
