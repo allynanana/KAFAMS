@@ -20,7 +20,7 @@ class KafaActivityController2 extends Controller
      */
     public function index()
 {
-    $kafaactivities = KafaActivityRecord::all();
+    $kafaactivities = KafaActivityRecord::where('hidden', false)->get();
     return view('ManageKafaActivity.parents.index', compact('kafaactivities'));
 }
 

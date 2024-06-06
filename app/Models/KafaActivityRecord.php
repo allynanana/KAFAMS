@@ -13,7 +13,7 @@ class KafaActivityRecord extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'ActivityName', 'ActivityLocation', 'ActivityDate', 'ActivityTime',
-        'ActivityDesc', 'ActivityMode', 'ActivityPeriod', 'ActivityStatus'
+        'ActivityDesc', 'ActivityMode', 'ActivityPeriod', 'ActivityStatus', 'hidden'
     ];
 
     /**

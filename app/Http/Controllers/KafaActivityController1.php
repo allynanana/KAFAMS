@@ -17,7 +17,7 @@ class KafaActivityController1 extends Controller
      */
     public function index(): View
     {
-        $_kafaactivities = KafaActivityRecord::all();
+        $_kafaactivities = KafaActivityRecord::where('hidden', false)->get();
         return view('ManageKafaActivity.teachers.index')->with('teachers', $_kafaactivities);
     }
 

@@ -43,10 +43,7 @@
                                 </a>
                                 <a href="{{ url('/ManageKafaActivity/parents/' . $item->id . '/book') }}" title="Book">
                                     <button class="btn btn-success btn-sm"><i class="fa fa-book" aria-hidden="true"></i> Book</button>
-                                </a>
-                                <a href="{{ url('/ManageKafaActivity/parents/' . $item->id . '/cancel') }}" title="Cancel Book">
-                                    <button class="btn btn-warning btn-sm"><i class="fa fa-times" aria-hidden="true"></i> Cancel Book</button>
-                                </a>
+                                
                             </td>
                         </tr>
                     @endforeach

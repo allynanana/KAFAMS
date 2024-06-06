@@ -118,7 +118,16 @@ class KafaActivityController extends Controller
         return view('ManageKafaActivity.admins.index', compact('search', 'admins'));
     }
     
+    // Toggle Hide Activity
+    public function toggleHide($id)
+    {
+        $activity = KafaActivityRecord::findOrFail($id);
+        $activity->hidden = !$activity->hidden;
+        $activity->save();
 
+        return redirect()->route('admins.index')->with('success', 'Activity visibility toggled successfully!');
+
+    }
 
 
 }

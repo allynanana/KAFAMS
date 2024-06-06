@@ -1,6 +1,13 @@
 @extends('layout')
 @section('content')
 
+<style>
+    .toggle-activity {
+        cursor: pointer;
+        margin: 0 5px;
+    }
+</style>
+
 <div class="card">
 <div class="card-header" style="background-color: #bff6c3; color: black;">
 
@@ -50,6 +57,14 @@
                                         <i class="fa fa-trash-o" aria-hidden="true"></i> Delete
                                     </button>
                                 </form>
+                                 <!-- Hide/Unhide Activity Button -->
+                                 <form action="{{ route('activity.toggle', $item->id) }}" method="POST" style="display:inline-block;" class="toggle-form">
+                                      @csrf
+                                         @method('PUT')
+                                    <button type="submit" class="btn btn-secondary btn-sm toggle-activity" title="{{ $item->hidden ? 'Unhide Activity' : 'Hide Activity' }}">
+                                      <i class="fa {{ $item->hidden ? 'fa-eye' : 'fa-eye-slash' }}" aria-hidden="true"></i> {{ $item->hidden ? 'Unhide' : 'Hide' }}
+                                    </button>
+                                 </form>
                             </td>
                         </tr>
                     @endforeach
@@ -58,5 +73,42 @@
         </div>
     </div>
 </div>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.toggle-form').forEach(form => {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const button = this.querySelector('.toggle-activity');
+            const row = this.closest('tr');
+            const url = this.action;
+
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Toggle row visibility
+                    row.style.display = row.style.display === 'none' ? '' : 'none';
+
+                    // Update button text and icon
+                    const isHidden = row.style.display === 'none';
+                    button.innerHTML = isHidden ? 
+                        '<i class="fa fa-eye" aria-hidden="true"></i> Unhide' : 
+                        '<i class="fa fa-eye-slash" aria-hidden="true"></i> Hide';
+                    button.title = isHidden ? 'Unhide Activity' : 'Hide Activity';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+});
+
+</script>
 
 @endsection
