@@ -2,16 +2,20 @@
 @section('content')
 
 <style>
+
+    .hidden {
+        display: none;
+    }
+
     .toggle-activity {
         cursor: pointer;
         margin: 0 5px;
     }
 </style>
 
-<div class="card">
-<div class="card-header" style="background-color: #bff6c3; color: black;">
-
-        <h2>KAFA Activity</h2>
+<div class="card shadow-lg">
+    <div class="card-header" style="background-color: #bff6c3; color: black;">
+        <h2 class="text-center">KAFA Activity</h2>
     </div>
     
     <div class="card-body">
@@ -43,7 +47,7 @@
                             <td>{{ $item->ActivityName }}</td>
                             <td>{{ $item->ActivityMode }}</td>
                             <td>{{ $item->ActivityDate }}</td>
-                            <td>
+                            <td class="text-center">
                                 <a href="{{ url('/ManageKafaActivity/admins/' . $item->id) }}" title="View Activity">
                                     <button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
                                 </a>
@@ -58,13 +62,15 @@
                                     </button>
                                 </form>
                                  <!-- Hide/Unhide Activity Button -->
-                                 <form action="{{ route('activity.toggle', $item->id) }}" method="POST" style="display:inline-block;" class="toggle-form">
-                                      @csrf
-                                         @method('PUT')
-                                    <button type="submit" class="btn btn-secondary btn-sm toggle-activity" title="{{ $item->hidden ? 'Unhide Activity' : 'Hide Activity' }}">
-                                      <i class="fa {{ $item->hidden ? 'fa-eye' : 'fa-eye-slash' }}" aria-hidden="true"></i> {{ $item->hidden ? 'Unhide' : 'Hide' }}
-                                    </button>
-                                 </form>
+                                <form action="{{ route('activity.toggle', $item->id) }}" method="POST" style="display:inline-block;" class="toggle-form">
+                                 @csrf
+                                @method('PUT')
+                                     <button type="button" class="btn btn-secondary btn-sm toggle-activity" title="{{ $item->hidden ? 'Unhide Activity' : 'Hide Activity' }}">
+                                     <i class="fa {{ $item->hidden ? 'fa-eye' : 'fa-eye-slash' }}" aria-hidden="true"></i> {{ $item->hidden ? 'Unhide' : 'Hide' }}
+                                     </button>
+                                </form>
+
+
                             </td>
                         </tr>
                     @endforeach
@@ -75,13 +81,12 @@
 </div>
 
 <script>
-   document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.toggle-form').forEach(form => {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const button = this.querySelector('.toggle-activity');
-            const row = this.closest('tr');
-            const url = this.action;
+        const button = form.querySelector('.toggle-activity');
+        button.addEventListener('click', function() {
+            const row = form.closest('tr');
+            const url = form.action;
 
             fetch(url, {
                 method: 'PUT',
@@ -94,10 +99,9 @@
             .then(data => {
                 if (data.status === 'success') {
                     // Toggle row visibility
-                    row.style.display = row.style.display === 'none' ? '' : 'none';
+                    const isHidden = row.classList.toggle('hidden');
 
                     // Update button text and icon
-                    const isHidden = row.style.display === 'none';
                     button.innerHTML = isHidden ? 
                         '<i class="fa fa-eye" aria-hidden="true"></i> Unhide' : 
                         '<i class="fa fa-eye-slash" aria-hidden="true"></i> Hide';
@@ -108,6 +112,7 @@
         });
     });
 });
+
 
 </script>
 

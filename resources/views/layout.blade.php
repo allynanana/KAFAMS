@@ -137,9 +137,9 @@
         <a class="active" href="#registration"><i class="fas fa-clipboard-list"></i> Registration</a>
         <button class="dropdown-btn"><i class="fas fa-chalkboard-teacher"></i> KAFA Activity <i class="fa fa-caret-down"></i></button>
         <div class="dropdown-container">
-            <a href="{{ url('/ManageKafaActivity/teachers') }}"><i class="fas fa-user-tie"></i> Teacher</a>
-            <a href="{{ url('/ManageKafaActivity/admins') }}"><i class="fas fa-user-shield"></i> Admin</a>
-            <a href="{{ url('/ManageKafaActivity/parents') }}"><i class="fas fa-user-friends"></i> Parent</a>
+        <a href="{{ url('/ManageKafaActivity/teachers') }}"><i class="fas fa-user-tie"></i> Teacher</a>
+        <a href="{{ url('/ManageKafaActivity/admins') }}"><i class="fas fa-user-shield"></i> Admin</a>
+        <a href="{{ url('/ManageKafaActivity/parents') }}"><i class="fas fa-user-friends"></i> Parent</a>
         </div>
         <a href="#report"><i class="fas fa-chart-line"></i> Report</a>
         <a href="#about"><i class="fas fa-info-circle"></i> About</a>
