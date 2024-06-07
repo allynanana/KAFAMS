@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>KAFA Management System</title>
+    <link rel="stylesheet" href="path/to/styles.css">
+    <link rel="app" href="{{ asset('resources/css/app.css') }}">
+    <title>Admin Homepage</title>
 
     <style>
         /* The side navigation menu */
-        .sidebar {
+    .sidebar {
     margin: 0;
     padding: 0;
     width: 250px;
@@ -143,7 +145,11 @@
             <a href="{{ url('/ManageKafaActivity/admins') }}"><i class="fas fa-user-shield"></i> Admin</a>
             <a href="{{ url('/ManageKafaActivity/parents') }}"><i class="fas fa-user-friends"></i> Parent</a>
         </div>
-        <a href="#report"><i class="fas fa-chart-line"></i> Report</a>
+        <button class="dropdown-btn"><i class="fas fa-chart-line"></i> Report <i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-container">
+            <a href="{{ url('/ManageReport/Admin/Activity') }}"><i class="fas fa-chalkboard-teacher"></i> Activities</a>
+            <a href="{{ url('/ManageReport/Admin/User') }}"><i class="fas fa-user-shield"></i> User</a>
+        </div>
         <a href="#about"><i class="fas fa-info-circle"></i> About</a>
     </div>
 

@@ -331,7 +331,7 @@
                                   </tr>
                                 </tbody>
                               </table>
-                            <button  href="{{ route('AdminActivityReport') }}" class="btn btn-primary" >View Summarised Report</button>
+                            <button  href="" class="btn btn-primary" >View Summarised Report</button>
                 </div>
             </div>
             <div class="tab">

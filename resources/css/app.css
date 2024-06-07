@@ -1,0 +1,215 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #bff6c3; /* Lighter green background color */
+    position: absolute; /* Change from fixed to absolute */
+    height: 100%;
+    overflow: auto;
+    transition: width 0.5s;
+    }
+
+    
+/* Sidebar links */
+    .sidebar a {
+        display: block;
+        color: #333; /* Dark text color */
+        padding: 15px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* Active/current link */
+    .sidebar a.active {
+        background-color: #ace1af; /* Light green for active link */
+        color: white; /* White text color */
+    }
+
+    /* Links on mouse-over */
+    .sidebar a:hover:not(.active) {
+        background-color: #b0ebb4; /* Lighter shade of green on hover */
+        color: white; /* White text color */
+    }
+
+    /* Page content */
+    .content {
+        margin-left: 250px;
+        padding: 20px;
+        transition: margin-left 0.5s;
+    }
+
+    /* Style the dropdown button */
+    .dropdown-btn {
+        padding: 15px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #333; /* Dark text color */
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+    }
+
+    /* On mouse-over */
+    .dropdown-btn:hover {
+        background-color: #b0ebb4; /* Lighter shade of green on hover */
+        color: white; /* White text color */
+    }
+
+    /* Add an active class to the active dropdown button */
+    .dropdown-btn.active {
+        background-color: #ace1af; /* Light green for active button */
+        color: white; /* White text color */
+    }
+
+    /* Dropdown container */
+    .dropdown-container {
+        display: none;
+        background-color: #e0fbe2; /* Very light shade of green */
+        padding-left: 15px;
+    }
+
+    /* Style the dropdown links */
+    .dropdown-container a {
+        color: #333; /* Dark text color */
+        padding: 15px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    /* On hover */
+    .dropdown-container a:hover {
+        background-color: #b0ebb4; /* Lighter shade of green on hover */
+        color: white; /* White text color */
+    }
+
+    /* Media queries for responsiveness */
+    @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+/* Test */
+        .sidebar a, .dropdown-btn {
+            text-align: center;
+            float: none;
+        }
+
+        .content {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidebar { padding-top: 15px; }
+        .sidebar a { font-size: 18px; }
+    }
+
+    .tabs {
+        position: relative;
+        margin-bottom: 15%;
+        background: #fff;
+        height: 14.75rem;
+    }
+
+    .tabs::before,
+    .tabs::after {
+        content: "";
+        display: table;
+    }
+
+    .tabs::after {
+        clear: both;
+    }
+
+    .tab {
+        float: left;
+    }
+
+    .tab-switch {
+        display: none;
+    }
+
+    .tab-label {
+        position: relative;
+        display: block;
+        line-height: 1em;
+        height: 2.75rem;
+        width: 9rem;
+        padding: 0 2em;
+        background: #29429B;
+        border-right: 0.125rem solid #16a085;
+        color: white;
+        cursor: pointer;
+        top: 0;
+        transition: all 0.25s;
+        text-align: center;
+    }
+
+    .tab-label:hover {
+        top: -0.25rem;
+        transition: top 0.25s;
+    }
+
+    .tab-content {
+        height: auto;
+        position: absolute;
+        z-index: 1;
+        top: 2.75em;
+        left: 0;
+        padding: 1.618rem;
+        background: #D9D9D9;
+        color: #2c3e50;
+        border-bottom: 0.25rem solid #bdc3c7;
+        opacity: 0;
+        transition: all 0.35s;
+        width: 85%;
+    }
+
+    .tab-switch:checked + .tab-label {
+        background: #5B73C6;
+        color: black;
+        border-bottom: 0;
+        border-right: 0.125rem solid #fff;
+        transition: all 0.35s;
+        z-index: 1;
+        top: -0.0625rem;
+    }
+
+    .tab-switch:checked + label + .tab-content {
+        z-index: 2;
+        opacity: 1;
+        transition: all 0.35s;
+    }
+
+
+
+
+
+    label {
+        display: inline-block;
+        width: 250px;
+        text-align: right;
+    }
+
+    .container {
+        position: relative;
+        position: absolute;
+        bottom: 10px;
+        right: 10px; /* Changed from left to right */
+    }
+
+    .btn-primary {
+        position: absolute;
+        bottom: 10px;
+        right: 10px; /* Changed from left to right */
+    }
+
+    .table {
+        width: 100%; /* 70% longer than 100% */
+    }

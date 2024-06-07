@@ -12,8 +12,9 @@ Route::get('/', function () {
 
 //Route::resource('/ManageKafaActivity/admins', KAFAActivityController::class);
 Route::get('/ManageReport', [ManageReportController::class, 'AdminHomepage']);
-Route::get('/ManageReport/Admin', [ManageReportController::class, 'AdminActivityReport']);
-Route::get('/ManageReport/Admin', [ManageReportController::class, 'AdminActivityReportFull']);
+Route::get('/ManageReport/Admin/Activity', [ManageReportController::class, 'AdminActivityReport']);
+Route::get('/ManageReport/Admin/Activity', [ManageReportController::class, 'AdminActivityReportFull']);
+Route::get('/ManageReport/Admin/User', [ManageReportController::class, 'AdminUserReport']);
 
 
 
