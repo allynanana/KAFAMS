@@ -260,40 +260,45 @@
         <div class="tabs">
             <div class="tab">
                 <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
-                <label for="tab-1" class="tab-label">YEAR 1</label>
+                <label for="tab-1" class="tab-label">General User</label>
                 <div class="tab-content">
-                    
-                        
-                            <!-- Year 1 table report -->
+                            <!-- General User table report -->
                             <table class="table">
                                 <thead class="thead-dark">
                                   <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Activity</th>
-                                    <th scope="col">Total Participant</th>
+                                    <th scope="col">Type Of User</th>
+                                    <th scope="col">Total User</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   <tr>
                                     <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <td>KAFA Admin</td>
+                                    <td>{{ $kafaadmin }}</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
+                                    <td>MUIP Admin</td>
+                                    <td>{{$muipadmin}}</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
+                                    <td>Parent</td>
+                                    <td>{{ $parent }}</td>
                                     
                                   </tr>
                                   <tr>
                                     <th scope="row">4</th>
-                                    <td></td>
-                                    <td>the Bird</td>
+                                    <td>Teacher</td>
+                                    <td>{{$teacher}}</td>
+                                    
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row">4</th>
+                                    <td>Student</td>
+                                    <td>{{$student}}</td>
                                     
                                   </tr>
                                 </tbody>
@@ -303,38 +308,50 @@
             </div>
             <div class="tab">
                 <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-                <label for="tab-2" class="tab-label">YEAR 2</label>
+                <label for="tab-2" class="tab-label">Students</label>
                 <div class="tab-content">
-                    <!-- YEAR 2 GRAPH REPORT -->
+                    <!-- Student's table report -->
                     <table class="table">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Activity</th>
-                            <th scope="col">Total Participant</th>
+                            <th scope="col">Education Level</th>
+                            <th scope="col">Total Student</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <td>Year 1</td>
+                            <td>{{$student1}}</td>
                           </tr>
                           <tr>
                             <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
+                            <td>Year 2</td>
+                            <td>{{$student2}}</td>
                           </tr>
                           <tr>
                             <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
+                            <td>Year 3</td>
+                            <td>{{$student3}}</td>
                             
                           </tr>
                           <tr>
                             <th scope="row">4</th>
-                            <td></td>
-                            <td>the Bird</td>
+                            <td>Year 4</td>
+                            <td>{{$student4}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Year 5</td>
+                            <td>{{$student5}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Year 6</td>
+                            <td>{{$student6}}</td>
                             
                           </tr>
                         </tbody>
@@ -343,177 +360,7 @@
                       <button class="btn btn-primary" type="submit">View Summarised Report</button>
                 </div>
             </div>
-            <div class="tab">
-                <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
-                <label for="tab-3" class="tab-label">YEAR 3</label>
-                <div class="tab-content">
-                   <!-- YEAR 3 GRAPH REPORT -->
-                   <table class="table">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Activity</th>
-                        <th scope="col">Total Participant</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td></td>
-                        <td>the Bird</td>
-                        
-                      </tr>
-                    </tbody>
-                  </table>
 
-                  <button class="btn btn-primary" type="submit">View Summarised Report</button> 
-                </div>
-            </div>
-            
-            <div class="tab">
-                <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
-                <label for="tab-4" class="tab-label">YEAR 4</label>
-                <div class="tab-content">
-                   <!-- YEAR 4 GRAPH REPORT -->
-                   <table class="table">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Activity</th>
-                        <th scope="col">Total Participant</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td></td>
-                        <td>the Bird</td>
-                        
-                      </tr>
-                    </tbody>
-                  </table>
-
-                  <button class="btn btn-primary" type="submit">View Summarised Report</button> 
-                </div>
-            </div>
-            
-            <div class="tab">
-                <input type="radio" name="css-tabs" id="tab-5" class="tab-switch">
-                <label for="tab-5" class="tab-label">YEAR 5</label>
-                <div class="tab-content">
-                   <!-- YEAR 5 GRAPH REPORT -->
-                   <table class="table">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Activity</th>
-                        <th scope="col">Total Participant</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td></td>
-                        <td>the Bird</td>
-                        
-                      </tr>
-                    </tbody>
-                  </table>
-
-                  <button class="btn btn-primary" type="submit">View Summarised Report</button> 
-                </div>
-            </div>
-
-            <div class="tab">
-                <input type="radio" name="css-tabs" id="tab-6" class="tab-switch">
-                <label for="tab-6" class="tab-label">YEAR 6</label>
-                <div class="tab-content">
-                   <!-- YEAR 6 GRAPH REPORT -->
-                   <table class="table">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Activity</th>
-                        <th scope="col">Total Participant</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td></td>
-                        <td>the Bird</td>
-                        
-                      </tr>
-                    </tbody>
-                  </table>
-
-                  <button class="btn btn-primary" type="submit">View Summarised Report</button> 
-                </div>
-            </div>
         </div>
         
     </div>
