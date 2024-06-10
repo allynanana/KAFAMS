@@ -12,9 +12,7 @@
                 <a href="{{ route('parents.viewBooking') }}" class="btn btn-info btn-sm mr-2" title="My Booking">
                     <i class="fa fa-calendar-check" aria-hidden="true"></i> My Booking
                 </a>
-                <a href="{{ url('/ManageKafaActivity/parents/create') }}" class="btn btn-success btn-sm" title="Add New Activity">
-                    <i class="fa fa-plus" aria-hidden="true"></i> Add Student Details
-                </a>
+               
             </div>
             <form class="form-inline" type="get" action="/search">
                 <div class="input-group">

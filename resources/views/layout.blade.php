@@ -125,7 +125,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="path/to/your/logo.png" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+            <img src="{{ asset('assets/logo2.png') }}" alt="Logo" style="width: 100px; height: 100px; margin-right: 10px; object-fit: contain;">
             <h2 style="display: inline; vertical-align: middle;">KAFA MANAGEMENT SYSTEM</h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
