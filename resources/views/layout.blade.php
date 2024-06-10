@@ -131,14 +131,28 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <!-- Add logout link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" >
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                    <form id="logout-form" action="#" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div class="sidebar">
         <a class="active" href="#registration"><i class="fas fa-clipboard-list"></i> Registration</a>
         <button class="dropdown-btn"><i class="fas fa-chalkboard-teacher"></i> KAFA Activity <i class="fa fa-caret-down"></i></button>
         <div class="dropdown-container">
-        <a href="{{ url('/ManageKafaActivity/teachers') }}"><i class="fas fa-user-tie"></i> Teacher</a>
         <a href="{{ url('/ManageKafaActivity/admins') }}"><i class="fas fa-user-shield"></i> Admin</a>
+        <a href="{{ url('/ManageKafaActivity/teachers') }}"><i class="fas fa-user-tie"></i> Teacher</a>
         <a href="{{ url('/ManageKafaActivity/parents') }}"><i class="fas fa-user-friends"></i> Parent</a>
         </div>
         <a href="#report"><i class="fas fa-chart-line"></i> Report</a>
