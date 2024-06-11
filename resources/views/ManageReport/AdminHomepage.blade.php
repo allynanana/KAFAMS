@@ -147,8 +147,8 @@
         </div>
         <button class="dropdown-btn"><i class="fas fa-chart-line"></i> Report <i class="fa fa-caret-down"></i></button>
         <div class="dropdown-container">
-            <a href="{{ url('/ManageReport/Admin/Activity') }}"><i class="fas fa-chalkboard-teacher"></i> Activities</a>
-            <a href="{{ url('/ManageReport/Admin/User') }}"><i class="fas fa-user-shield"></i> User</a>
+            <a href="{{ url('/ManageReport/Admin/ActivityReport') }}"><i class="fas fa-chalkboard-teacher"></i> Activities</a>
+            <a href="{{ url('/ManageReport/Admin/UserReport') }}"><i class="fas fa-user-shield"></i> User</a>
         </div>
         <a href="#about"><i class="fas fa-info-circle"></i> About</a>
     </div>
