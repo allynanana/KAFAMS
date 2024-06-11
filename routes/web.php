@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KafaActivityController; // Controller for managing KAFA activities(admin)
 use App\Http\Controllers\KafaActivityController1; // Controller for managing KAFA activities(teacher)
@@ -9,38 +11,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/login', function () {
-    return view('ManageRegistration/Login');
+Route::get('/dashboard1', function () {
+    return view('dashboard1');
+})->middleware(['auth', 'verified'])->name('dashboard1');
+
+Route::get('/dashboard2', function () {
+    return view('dashboard2');
+})->middleware(['auth', 'verified'])->name('dashboard2');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/signup', function () {
-    return view('ManageRegistration/SignUp');
-});
-
-Route::get('/forgotpassword', function () {
-    return view('ManageRegistration/ForgotPassword');
-});
-
-Route::get('/', function () {
-    return view('layout');
-});
-
-// Define resource routes for admins management
-Route::resource('/ManageKafaActivity/admins', KafaActivityController::class);
-// Define resource routes for teachers management
-Route::resource('/ManageKafaActivity/teachers', KafaActivityController1::class);
-// Define a route for searching activities in the admin section
-Route::get('/search', [KafaActivityController::class, 'search']);
-// Define a route for searching activities in the teachers section
-Route::get('/search1', [KafaActivityController1::class, 'search']);
-// Define resource routes for parents management
-Route::resource('/ManageKafaActivity/parents', KafaActivityController2::class);
-// Define a route for viewing bookings for parents
-Route::get('/ManageKafaActivity/parents/viewbooking', [KafaActivityController2::class, 'viewBooking'])->name('parents.viewBooking');
-// Define a route for booking an activity for parents
-Route::get('/ManageKafaActivity/parents/{id}/book', [KafaActivityController2::class, 'book'])->name('parents.book');
-// Define a route for canceling a booking for parents
-Route::get('/ManageKafaActivity/parents/{id}/cancel', [KafaActivityController2::class, 'cancel'])->name('parents.cancel');
-// Define a route for toggling activity visibility (hide/unhide)
-Route::put('/ManageKafaActivity/parents/{id}/toggle', [KafaActivityController::class, 'toggleHide'])->name('activity.toggle');
+require __DIR__.'/auth.php';
