@@ -1,0 +1,92 @@
+/* custom.css */
+
+/* Custom styles for the KAFA Management System */
+body {
+    background-color: #F5F5F5; /* Light gray background */
+}
+
+#logo {
+    margin-top: 0; /* Remove top margin */
+    width: 450px; /* Adjust size as needed */
+}
+
+h1 {
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: 700; /* Bold font */
+    margin-top: 0; /* Remove margin */
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background: #FFFFFF; /* White background for the form */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #CCCCCC; /* Light gray border */
+    border-radius: 5px; /* Rounded input fields */
+}
+
+button,
+.green-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1E90FF; /* Blue background for login button */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded button */
+    cursor: pointer;
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+}
+
+button:hover,
+.green-button:hover {
+    background-color: #1C86EE; /* Darker blue on hover */
+}
+
+.green-button {
+    background-color: #32CD32; /* Green background */
+    margin-top: 10px; /* Margin to separate from other elements */
+}
+
+.green-button:hover {
+    background-color: #228B22; /* Darker green on hover */
+}
+
+.login-button {
+    background-color: #396eff; /* Green background */
+    margin-top: 10px; /* Margin to separate from other elements */
+}
+
+.login-button:hover {
+    background-color: #001196; /* Darker green on hover */
+}
+
+
+a {
+    color: #1E90FF; /* Blue links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1C86EE; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+a.green {
+    color: #32CD32; /* Green text for create new account link */
+}
+
+a.green:hover {
+    color: #228B22; /* Darker green on hover */
+}
