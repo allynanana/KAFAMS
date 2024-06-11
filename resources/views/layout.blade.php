@@ -10,16 +10,15 @@
     <style>
         /* The side navigation menu */
         .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 250px;
-    background-color: #bff6c3; /* Lighter green background color */
-    position: absolute; /* Change from fixed to absolute */
-    height: 100%;
-    overflow: auto;
-    transition: width 0.5s;
-}
-
+            margin: 0;
+            padding: 0;
+            width: 250px;
+            background-color: #bff6c3; /* Lighter green background color */
+            position: absolute; /* Change from fixed to absolute */
+            height: 100%;
+            overflow: auto;
+            transition: width 0.5s;
+        }
 
         /* Sidebar links */
         .sidebar a {
@@ -125,6 +124,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
+            <!-- Logo Image with updated styles for better quality and size -->
             <img src="{{ asset('assets/logo2.png') }}" alt="Logo" style="width: 100px; height: 100px; margin-right: 10px; object-fit: contain;">
             <h2 style="display: inline; vertical-align: middle;">KAFA MANAGEMENT SYSTEM</h2>
         </a>
@@ -132,6 +132,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Collapsible navbar content -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <!-- Add logout link -->
@@ -140,7 +141,7 @@
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                     <form id="logout-form" action="#" method="POST" style="display: none;">
-                        @csrf
+                        @csrf <!-- CSRF token for form security -->
                     </form>
                 </li>
             </ul>
@@ -151,22 +152,23 @@
         <a class="active" href="#registration"><i class="fas fa-clipboard-list"></i> Registration</a>
         <button class="dropdown-btn"><i class="fas fa-chalkboard-teacher"></i> KAFA Activity <i class="fa fa-caret-down"></i></button>
         <div class="dropdown-container">
-        <a href="{{ url('/ManageKafaActivity/admins') }}"><i class="fas fa-user-shield"></i> Admin</a>
-        <a href="{{ url('/ManageKafaActivity/teachers') }}"><i class="fas fa-user-tie"></i> Teacher</a>
-        <a href="{{ url('/ManageKafaActivity/parents') }}"><i class="fas fa-user-friends"></i> Parent</a>
+            <a href="{{ url('/ManageKafaActivity/admins') }}"><i class="fas fa-user-shield"></i> Admin</a>
+            <a href="{{ url('/ManageKafaActivity/teachers') }}"><i class="fas fa-user-tie"></i> Teacher</a>
+            <a href="{{ url('/ManageKafaActivity/parents') }}"><i class="fas fa-user-friends"></i> Parent</a>
         </div>
         <a href="#report"><i class="fas fa-chart-line"></i> Report</a>
         <a href="#about"><i class="fas fa-info-circle"></i> About</a>
     </div>
 
     <div class="content">
-        @yield('content')
+        @yield('content') <!-- Content section to be filled by Blade templates -->
     </div>
 
     <script>
         var dropdown = document.getElementsByClassName("dropdown-btn");
         var i;
 
+        // Add event listeners for dropdown buttons
         for (i = 0; i < dropdown.length; i++) {
             dropdown[i].addEventListener("click", function() {
                 this.classList.toggle("active");
