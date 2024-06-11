@@ -298,40 +298,47 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Type Of User</th>
-                                <th scope="col">Total User</th>
+                                <th scope="col">Type Of Activities</th>
+                                <th scope="col">Total Participants</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>KAFA Admin</td>
+                                <td>Bahasa Arab</td>
                                 <td>{{ $kafaadmin }}</td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>MUIP Admin</td>
+                                <td>ceramah</td>
                                 <td>{{ $muipadmin }}</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td>Parent</td>
+                                <td>Adab</td>
                                 <td>{{ $parent }}</td>
 
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
-                                <td>Teacher</td>
+                                <td>Ibadah</td>
                                 <td>{{ $teacher }}</td>
 
                             </tr>
 
                             <tr>
                                 <th scope="row">5</th>
-                                <td>Student</td>
+                                <td>Aqidah</td>
                                 <td>{{ $student }}</td>
 
                             </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Sirah</td>
+                                <td>{{ $student }}</td>
+
+                            </tr>
+                            
                             <tr>
                                 <th scope="row"></th>
                                 <td><strong>Total Users</strong></td>
