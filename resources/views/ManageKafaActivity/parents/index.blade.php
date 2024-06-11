@@ -16,6 +16,13 @@
                 <a href="{{ route('parents.viewBooking') }}" class="btn btn-info btn-sm mr-2" title="My Booking">
                     <i class="fa fa-calendar-check" aria-hidden="true"></i> My Booking
                 </a>
+                 <!-- Add Student Details Button -->
+                 <a href="{{ route('parents.create') }}" class="btn btn-info btn-sm mr-2" title="Add Student Details">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i> Add Student Details
+                </a>
+               
+                
+               
             </div>
             <!-- Search Form -->
             <form class="form-inline" type="get" action="/search">
@@ -26,6 +33,7 @@
                         <!-- Search Button -->
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </div>
+                    
                 </div>
             </form>
         </div>

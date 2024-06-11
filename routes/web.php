@@ -29,4 +29,26 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Resource routes for KAFA activities
+Route::get('/', function () {
+    return view('layout');
+});
+
+
+Route::resource('/ManageKafaActivity/admins', KafaActivityController::class);
+Route::resource('/ManageKafaActivity/teachers', KafaActivityController1::class);
+Route::resource('/ManageKafaActivity/parents', KafaActivityController2::class);
+Route::get('/ManageKafaActivity/parents/viewbooking', [KafaActivityController2::class, 'viewBooking'])->name('parents.viewBooking');
+Route::get('/ManageKafaActivity/parents/{id}/book', [KafaActivityController2::class, 'book'])->name('parents.book');
+Route::get('/ManageKafaActivity/parents/{id}/cancel', [KafaActivityController2::class, 'cancel'])->name('parents.cancel');
+Route::put('/ManageKafaActivity/parents/{id}/toggle', [KafaActivityController::class, 'toggleHide'])->name('activity.toggle');
+Route::get('/parents/create', [KafaActivityController2::class, 'create'])->name('parents.create');
+Route::get('ManageKafaActivity/parents/{id}', [KafaActivityController2::class, 'showStudent'])->name('parents.show');
+
+
 require __DIR__.'/auth.php';
+
+
+
+
+

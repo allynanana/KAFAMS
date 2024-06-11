@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use App\Models\KafaActivityRecord;
+use App\Models\StudentRecord;
 use App\Models\Booking;
+
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
 
@@ -29,9 +31,9 @@ class KafaActivityController2 extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('ManageKafaActivity.parents.create');
     }
 
     /**
@@ -40,10 +42,33 @@ class KafaActivityController2 extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
-    {
-        //
-    }
+{
+    // Validate the request data
+    $validated = $request->validate([
+        'StudentName' => 'required|string|max:255',
+        'StudentGender' => 'required|in:male,female,other',
+        'StudentAge' => 'required|integer|min:1',
+        'EducationLevel' => 'required|string|max:255',
+        'EmergencyContact' => 'required|string|max:15', // Adjust max length as needed
+    ]);
+
+    // Create a new student record
+    $student = new studentRecord();
+    $student->StudentName = $validated['StudentName'];
+    $student->StudentGender = $validated['StudentGender'];
+    $student->StudentAge = $validated['StudentAge'];
+    $student->EducationLevel = $validated['EducationLevel'];
+    $student->EmergencyContact = $validated['EmergencyContact'];
+    $student->save();
+
+
+   // Render the showStudent view with the student's data
+    return view('ManageKafaActivity.parents.showStudent', compact('student'));
+
+}
+
 
     /**
      * Display the specified resource.
@@ -60,6 +85,24 @@ class KafaActivityController2 extends Controller
 
         return view('ManageKafaActivity.parents.viewbooking', compact('bookings'));
     }
+
+     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showStudent($id)
+{
+    $student = Student::findOrFail($id); // Fetch the student by ID
+    return view('showStudent', ['student' => $student]);
+}
+
+    
+    
+
+   
+
 
 
     public function book($id)

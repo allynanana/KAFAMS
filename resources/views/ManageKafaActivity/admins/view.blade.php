@@ -6,7 +6,7 @@
     <div class="card-header">Activity Details Page</div>
     <!-- Card Body -->
     <div class="card-body">
-        
+    
         <!-- Inner Card Body to display activity details -->
         <div class="card-body">
             <!-- Display Activity Name -->
