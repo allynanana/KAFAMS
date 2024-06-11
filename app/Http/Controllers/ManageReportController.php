@@ -63,7 +63,7 @@ class  ManageReportController extends Controller
         ));
     }
 
-    public function adminUserReport()
+    public function MUIPUserReport()
     {
         // Counts for each type of user
         $parent = parentModel::count();
@@ -72,6 +72,8 @@ class  ManageReportController extends Controller
         $teacher = teacher::count();
         $student = student::count();
 
+        $totalUsers = $parent + $kafaadmin + $muipadmin + $teacher + $student;
+
         // Counts for each education level
         $student1 = student::where('EducationLevel', '1')->count();
         $student2 = student::where('EducationLevel', '2')->count();
@@ -79,6 +81,8 @@ class  ManageReportController extends Controller
         $student4 = student::where('EducationLevel', '4')->count();
         $student5 = student::where('EducationLevel', '5')->count();
         $student6 = student::where('EducationLevel', '6')->count();
+
+        $totalStudents = $student1 + $student2 + $student3 + $student4 + $student5 + $student6;
 
         // Fetch data for the chart
         $students = student::select('EducationLevel', DB::raw('count(*) as total'))
@@ -93,9 +97,9 @@ class  ManageReportController extends Controller
         $userTypes = ['KAFAadmin', 'MUIPAdmin', 'Student', 'Teacher', 'Parent'];
         $userCounts = [$kafaadmin, $muipadmin, $student, $teacher, $parent];
 
-        return view('ManageReport.Admin.User.AdminUserReport', compact(
-            'parent', 'kafaadmin', 'muipadmin', 'teacher', 'student',
-            'student1', 'student2', 'student3', 'student4', 'student5', 'student6',
+        return view('ManageReport.Admin.UserReport.AdminUserReport', compact(
+            'parent', 'kafaadmin', 'muipadmin', 'teacher', 'student','totalUsers',
+            'student1', 'student2', 'student3', 'student4', 'student5', 'student6','totalStudents',
             'levels', 'totals', 'userTypes', 'userCounts'
         ));
     }
