@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('activity_id');
             $table->timestamps();
+
+            $table->foreign('activity_id')->references('id')->on('_kafaactivities');
         });
     }
 

@@ -16,6 +16,7 @@ Route::get('/ManageReport/Admin/ActivityReport', [ManageReportController::class,
 Route::get('/ManageReport/Admin/UserReport', [ManageReportController::class, 'AdminUserReport']);
 
 Route::get('/ManageReport/MUIP/UserReport', [ManageReportController::class, 'MUIPUserReport']);
+Route::get('/ManageReport/MUIP/ActivityReport', [ManageReportController::class, 'MUIPActivityReport']);
 
 
 
