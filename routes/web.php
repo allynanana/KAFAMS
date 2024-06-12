@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ManageReportController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KafaActivityController; // Controller for managing KAFA activities(admin)
 use App\Http\Controllers\KafaActivityController1; // Controller for managing KAFA activities(teacher)
