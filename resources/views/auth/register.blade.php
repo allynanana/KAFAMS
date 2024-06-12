@@ -59,6 +59,7 @@
     <select id="role" class="block mt-1 w-full" name="role" required>
         <option value="parent" {{ old('role') == 'parent' ? 'selected' : '' }}>Parent</option>
         <option value="kafa_admin" {{ old('role') == 'admin' ? 'selected' : '' }}>KAFA Admin</option>
+        <option value="muip_admin" {{ old('role') == 'muip_admin' ? 'selected' : '' }}>MUIP Admin</option>
         <option value="teacher" {{ old('role') == 'teacher' ? 'selected' : '' }}>Teacher</option>
     </select>
     <x-input-error :messages="$errors->get('role')" class="mt-2" />

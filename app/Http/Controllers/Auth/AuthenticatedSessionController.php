@@ -36,6 +36,8 @@ class AuthenticatedSessionController extends Controller
             return redirect()->route('dashboard1');
         } elseif ($user->role === 'teacher') {
             return redirect()->route('dashboard2');
+        } elseif ($user->role === 'muip_admin') {
+            return redirect()->route('dashboard3');
         }
 
         // Fallback to a default route if the role is not recognized

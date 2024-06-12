@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
             'phonenumber' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'role' => ['required', 'string', 'in:parent,kafa_admin,teacher'],
+            'role' => ['required', 'string', 'in:parent,kafa_admin,muip_admin,teacher'],
         ]);
 
         $user = User::create([
