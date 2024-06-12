@@ -30,9 +30,6 @@ Route::middleware('auth')->group(function () {
 });
 
 // Resource routes for KAFA activities
-Route::get('/', function () {
-    return view('layout');
-});
 
 
 Route::resource('/ManageKafaActivity/admins', KafaActivityController::class);
