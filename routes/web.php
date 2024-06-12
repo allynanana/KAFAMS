@@ -43,6 +43,14 @@ Route::get('/parents/create', [KafaActivityController2::class, 'create'])->name(
 Route::get('ManageKafaActivity/parents/{id}', [KafaActivityController2::class, 'showStudent'])->name('parents.show');
 
 
+Route::get('/ManageReport', [ManageReportController::class, 'AdminHomepage']);
+Route::get('/ManageReport/Admin/ActivityReport', [ManageReportController::class, 'AdminActivityReport']);
+Route::get('/ManageReport/Admin/UserReport', [ManageReportController::class, 'AdminUserReport']);
+
+Route::get('/ManageReport/MUIP/UserReport', [ManageReportController::class, 'MUIPUserReport']);
+Route::get('/ManageReport/MUIP/ActivityReport', [ManageReportController::class, 'MUIPActivityReport']);
+
+
 require __DIR__.'/auth.php';
 
 
