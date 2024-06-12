@@ -158,7 +158,7 @@
                      
                     <a href="{{ url('/ManageKafaActivity/teachers') }}"><i class="fas fa-user-tie"></i> Teacher</a>
                     
-                   
+                    <a href="{{ url('/ManageKafaActivity/parents') }}"><i class="fas fa-user-friends"></i> Parent</a>
          
                
         </div>

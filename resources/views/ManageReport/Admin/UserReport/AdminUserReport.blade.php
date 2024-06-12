@@ -340,6 +340,7 @@
                             </tr>
                         </tbody>
                     </table>
+                     <!-- graph report -->
                     <button href="" class="btn btn-primary" onclick="showGraph('userTypeChart')">View Summarised
                         Report</button>
 
@@ -431,7 +432,7 @@
                             </tr>
                         </tbody>
                     </table>
-
+                             <!-- Graph report -->
                     <button class="btn btn-primary" onclick="showGraph('studentsChart')" type="submit">View Summarised
                         Report</button>
 
@@ -474,6 +475,7 @@
     </div>
 
     <script>
+        
         var dropdown = document.getElementsByClassName("dropdown-btn");
         var i;
 

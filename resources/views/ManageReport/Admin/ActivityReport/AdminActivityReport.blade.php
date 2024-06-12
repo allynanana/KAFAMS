@@ -260,7 +260,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
 
-            <img src="{{ asset('images/KAFAlogo.jpeg') }}" alt="Logo" width="25%" height="155px">
+            <img src="{{ asset('assets/logo2.png') }}" alt="Logo" width="25%" height="155px">
             <h2 style="display: inline; vertical-align: middle;">KAFA MANAGEMENT SYSTEM</h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -291,7 +291,7 @@
         <div class="tabs">
             <div class="tab">
                 <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
-                <label for="tab-1" class="tab-label">General User</label>
+                <label for="tab-1" class="tab-label">Activities</label>
                 <div class="tab-content">
                     <!-- General User table report -->
                     <table class="table">
@@ -346,6 +346,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    <!-- Graph report -->
                     <button href="" class="btn btn-primary" onclick="showGraph('activitieschart')">View Summarised
                         Report</button>
 
