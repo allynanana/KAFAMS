@@ -268,7 +268,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
-
+    <!-- Sidebar -->
     <div class="sidebar">
         <a class="active" href="#registration"><i class="fas fa-clipboard-list"></i> Registration</a>
         <button class="dropdown-btn"><i class="fas fa-chalkboard-teacher"></i> KAFA Activity <i

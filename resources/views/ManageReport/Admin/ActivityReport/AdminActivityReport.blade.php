@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <title>Admin User Report</title>
+    <title>Admin Activity Report</title>
 
     <style>
         /* The side navigation menu */
